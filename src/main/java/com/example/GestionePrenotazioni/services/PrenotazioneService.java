@@ -29,7 +29,7 @@ public class PrenotazioneService {
         log.info("la prenotazione: " + newPrenotazione.toString() + " è stata salvata correttamente nel DB");
     }
 
-    
+
 
 
 }
