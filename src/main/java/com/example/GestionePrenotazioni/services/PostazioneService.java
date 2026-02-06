@@ -28,6 +28,6 @@ public class PostazioneService {
     //ricerco della postazione per tipo e per città
     public List<Postazione> ricercaPostazioni(TipoPostazione tipoPostazione, String citta){
         log.info("ricerca della postazione: ", tipoPostazione, citta);
-        return postazioneRepository.findByTipoAndEdificioCitta(tipoPostazione, citta);
+        return postazioneRepository.findByTipoPostazioneAndEdificioCitta(tipoPostazione, citta);
     }
 }
