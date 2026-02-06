@@ -42,6 +42,5 @@ public class RunnerPrenotazioni implements CommandLineRunner {
         Prenotazione prenotazione = new Prenotazione(utente, postazione, LocalDate.now());
         prenotazioneService.savePrenotazione(prenotazione);
 
-
     }
 }

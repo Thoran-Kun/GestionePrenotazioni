@@ -1,6 +1,7 @@
 package com.example.GestionePrenotazioni.services;
 
 import com.example.GestionePrenotazioni.entities.Prenotazione;
+import com.example.GestionePrenotazioni.exceptions.ValidationException;
 import com.example.GestionePrenotazioni.repositories.PrenotazioneRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,9 +20,16 @@ public class PrenotazioneService {
     }
 
     public void savePrenotazione(Prenotazione newPrenotazione){
+//        this.prenotazioneRepository.save(newPrenotazione);
+//        log.info("la prenotazione: " + newPrenotazione.toString() + " è stata salvata correttamente nel DB");
+        if(newPrenotazione == null){
+            throw new ValidationException("errore nel salvataggio della prenotazione :(");
+        }
         this.prenotazioneRepository.save(newPrenotazione);
         log.info("la prenotazione: " + newPrenotazione.toString() + " è stata salvata correttamente nel DB");
     }
+
+    
 
 
 }
